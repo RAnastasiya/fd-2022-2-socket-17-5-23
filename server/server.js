@@ -6,11 +6,16 @@ const { SOCET_EVENTS } = require('./configs');
 
 const httpServer = http.createServer(app);
 
-const io = new Server(httpServer, { transports: ['websocket'] });
+const io = new Server(httpServer, {
+  // transports: ['websocket'],
+  cors: {
+    origin: 'http://127.0.0.1:3001'
+  }
+});
 
-io.on('conection', (socket) => {
-  console.log('conection socket');
-  socket.on('newMessage', async (message) => {
+io.on('connection', (socket) => {
+  console.log('connection socket');
+  socket.on(SOCET_EVENTS.NEW_MESSAGE, async (message) => {
     console.log('message ===>>', message);
     try {
       const savedMassage = await Message.create(message);
@@ -22,7 +27,7 @@ io.on('conection', (socket) => {
       socket.emit(SOCET_EVENTS.NEW_MESSAGE_ERROR, error);
     }
   });
-  socket.on('newMessage', (reason) => {
+  socket.on('disconect', (reason) => {
     console.log('message ===>>', reason);
   });
 })

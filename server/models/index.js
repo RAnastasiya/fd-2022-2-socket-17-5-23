@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const mongoose = require('mongoose');
-const { host, port, dbName } = require('../configs').mongo[process.env.NODE_ENV || 'devvelopment'];
+const { host, port, dbName } = require('../configs').mongo[process.env.NODE_ENV || 'development'];
 
 const baseName = path.basename(__filename);
 const db = {};

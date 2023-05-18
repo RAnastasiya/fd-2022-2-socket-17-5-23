@@ -1,7 +1,7 @@
 module.exports = {
   mongo: {
     development: {
-      host: 'localhost',
+      host: '127.0.0.1',
       port: 27017,
       dbName: 'fd_chat'
     },

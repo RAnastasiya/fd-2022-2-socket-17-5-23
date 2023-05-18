@@ -12,6 +12,8 @@ const schemaMessage = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   }
+}, {
+  timeseries: true
 });
 
 const Message = mongoose.model('Message', schemaMessage);
