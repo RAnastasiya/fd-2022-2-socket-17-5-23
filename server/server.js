@@ -9,7 +9,7 @@ const httpServer = http.createServer(app);
 const io = new Server(httpServer, {
   // transports: ['websocket'],
   cors: {
-    origin: 'http://127.0.0.1:3001'
+    origin: 'http://localhost:3001'
   }
 });
 

@@ -1,12 +1,14 @@
-import React from 'react';
-import FormMessage from './components/FormMessages';
-import ListMessage from './components/ListMessages';
+import React from "react";
+import FormMessage from "./components/FormMessage";
+import ListMessages from "./components/ListMessages";
 
-const App = () => (
-  <>
-    <ListMessage />
-    <FormMessage />
-  </>
-)
+const App = () => {
+  return (
+    <>
+      <ListMessages />
+      <FormMessage />
+    </>
+  );
+}
 
 export default App;
